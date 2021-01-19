@@ -26,6 +26,6 @@ VALUES (4, 70000, '16 Briset Street', NULL, 'London', NULL, 'United Kingdom')
 INSERT INTO Department
 VALUES ('Marketing', 'London');
 SELECT * FROM Employee WHERE DeptID = 4;
-SELECT SUM(Salary) FROM EmpDetails WHERE DeptID = 4;
+SELECT SUM(Salary) FROM EmpDetails INNER JOIN Employee ON EmpDetails.EmployeeID=Employee.ID WHERE DeptID = 4;
 SELECT * FROM Employee ORDER BY DeptID ASC;
 UPDATE EmpDetails SET Salary = 90000 WHERE EmployeeID = 4;
